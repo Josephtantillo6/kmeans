@@ -1,0 +1,13 @@
+Package: kmeans
+Title: K-Means Clustering with Shiny
+Version: 0.1.0
+Authors@R: person("Joseph Tantillo", email = "tantillojoseph6@email.com", role = c("aut", "cre"))
+Description: A package for performing and visualizing K-means clustering with a Shiny app.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: shiny, ggplot2
+Suggests: 
+    testthat (>= 3.0.0)
+RoxygenNote: 7.3.2
+Config/testthat/edition: 3
