@@ -1,16 +1,13 @@
-#' Calculate WCSS for Different Cluster Counts
+#' Plot K-Means Clusters
 #'
 #' @param data A data frame.
+#' @param kmeans_result A kmeans object.
 #' @param xvar X variable name.
 #' @param yvar Y variable name.
-#' @param max_k Max number of clusters to test.
 #'
-#' @return A vector of WCSS values.
+#' @return A scatter plot.
 #' @export
-calculate_wcss <- function(data, xvar, yvar, max_k = 10) {
-  selected_data <- data[, c(xvar, yvar)]
-  wcss <- sapply(1:max_k, function(k) {
-    kmeans(selected_data, k)$tot.withinss
-  })
-  return(wcss)
+plot_kmeans <- function(data, kmeans_result, xvar, yvar) {
+  plot(data[, c(xvar, yvar)], col = kmeans_result$cluster, pch = 20, cex = 3)
+  points(kmeans_result$centers, pch = 4, cex = 4, lwd = 4, col = "black")
 }
